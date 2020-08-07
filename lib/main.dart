@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
 */
 
 //Container dan Widget
-void main() => runApp(MyApp());
+/* void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -91,6 +91,47 @@ class MyApp extends StatelessWidget {
               Colors.amber,
               Colors.black 
             ])),
+          ),
+        ),
+      ),
+    );
+  }
+}
+*/
+
+
+//statefull widget
+void main () => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int number = 0;
+  void tekanTombol (){
+  
+  setState(() { //mengubah tampilan sesuai dengan keadaan saat ini
+  number = number + 1;  
+  });
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Statefull Widget Demo"),),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+           children: <Widget>[
+             Text(number.toString(), style: TextStyle(fontSize: 10 + number.toDouble()),),
+             RaisedButton(
+               child: Text("Hitung maju"),
+               onPressed: tekanTombol,)
+           ], 
           ),
         ),
       ),
