@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-//void main() => runApp(MyApp());
+//Belajar membuat tampilan home san text widget
+/*
 
 void main() {
   runApp(new MyApp());
@@ -21,12 +22,77 @@ class MyApp extends StatelessWidget {
                 width: 150,
                 height: 50,
                 child: Text(
-                  "Saya sedang belajar membuat aplikasi, saya sangat suka flutter ",
-                  maxLines: 2,
-                  overflow: TextOverflow.clip, //memotong text
-                  softWrap: false, //memotong text klu sudah melebihi container
-                  style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontWeight: FontWeight.w700, )
-                ))),
+                    "Saya sedang belajar membuat aplikasi, saya sangat suka flutter ",
+                    maxLines: 2,
+                    overflow: TextOverflow.clip, //memotong text
+                    softWrap:
+                        false, //memotong text klu sudah melebihi container
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20
+                    )))),
+      ),
+    );
+  }
+}
+*/
+
+/*
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Latihan Row dan Column"),),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: , //menyusun bentuk kolom atau baris widget yang ada didalamnya
+          children: <Widget>[
+            Text("cobaaa"),
+            Text("membuat tulisan"),
+            Text("dalam bentuk kolom"),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("halooooo"),
+                Text("dunia programming")
+              ]
+            )
+          ],
+        ),
+      ),
+    );  
+  }
+}
+*/
+
+//Container dan Widget
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Latihan Container satu"),
+        ),
+        body: Container(
+          color: Colors.blue,
+          margin: EdgeInsets.fromLTRB(13, 12, 12, 12),
+          padding: EdgeInsets.only(bottom: 10, top: 20),
+          child: Container(
+            decoration: BoxDecoration(gradient: LinearGradient(colors: <Color> [
+              Colors.amber,
+              Colors.black 
+            ])),
+          ),
+        ),
       ),
     );
   }
