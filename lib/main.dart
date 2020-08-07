@@ -1,6 +1,7 @@
+
 import 'package:flutter/material.dart';
 
-//Belajar membuat tampilan home san text widget
+//Belajar membuat tampilan home dan text widget
 /*
 
 void main() {
@@ -99,7 +100,7 @@ class MyApp extends StatelessWidget {
 }
 */
 
-
+/*
 //statefull widget
 void main () => runApp(MyApp());
 
@@ -132,6 +133,43 @@ class _MyAppState extends State<MyApp> {
                child: Text("Hitung maju"),
                onPressed: tekanTombol,)
            ], 
+          ),
+        ),
+      ),
+    );
+  }
+}
+*/
+
+
+//Anonymous method digunakan pada method yang hanya satu kali dipanggil.Begini caranya => () {....}
+void main () => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String message = "Silahkan tekan tombol";
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar (title: Text("Anonymous method"),),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              Text(message),
+              RaisedButton(child: Text("Tekan Saya"),
+              onPressed: () {
+               setState(() {
+                 message = "tombol sudah ditekan";
+               });
+            })
+            ]
           ),
         ),
       ),
