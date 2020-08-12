@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 //Belajar membuat tampilan home dan text widget
@@ -141,9 +140,8 @@ class _MyAppState extends State<MyApp> {
 }
 */
 
-
 //Anonymous method digunakan pada method yang hanya satu kali dipanggil.Begini caranya => () {....}
-void main () => runApp(MyApp());
+/* void main () => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -176,3 +174,36 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+*/
+
+//List View
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  List<Widget> widgets = []; //list kumpulan widget
+
+  _MyAppState() {
+    //constructor //mengatur bagaimana memunculkan isi widget secara otomatis
+    for (int i = 0; i< 15; i++) widgets.add(Text("Data ke-" + i.toString()));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Latihan ListView")),
+        body: Column(
+          children: widgets,
+        ),
+      ),
+    );
+  }
+}
+
+//menit ke 07.35
