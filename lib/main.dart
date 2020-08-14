@@ -187,19 +187,44 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   List<Widget> widgets = []; //list kumpulan widget
+  int counter = 1 ;
 
-  _MyAppState() {
+ /* _MyAppState() {
     //constructor //mengatur bagaimana memunculkan isi widget secara otomatis
-    for (int i = 0; i< 15; i++) widgets.add(Text("Data ke-" + i.toString()));
+    for (int i = 0; i< 15; i++) widgets.add(Text("Data ke-" + i.toString(), style: TextStyle(fontSize: 35),));
   }
+*/
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("Latihan ListView")),
-        body: Column(
-          children: widgets,
+        body: ListView(
+          children: <Widget> [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                RaisedButton(child: Text("Tambah Data"), onPressed: () {
+                  setState(() {
+                    widgets.add(Text("Data ke-" + counter.toString()));
+                    counter++;
+                  });
+                }),
+                RaisedButton(child: Text("Hapus Data"), onPressed: () {
+                  setState(() {
+                    widgets.add(Text("Data ke-" + counter.toString()));
+                    counter--;
+                  });
+                })
+              ]
+            ),
+            Column(
+              crossAxisAlignment : CrossAxisAlignment.start,
+              children: widgets,
+            )
+          ]
+  ,
         ),
       ),
     );
