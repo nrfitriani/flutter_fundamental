@@ -224,11 +224,10 @@ class _MyAppState extends State<MyApp> {
               children: widgets,
             )
           ]
-  ,
+
         ),
       ),
     );
   }
 }
 
-//menit ke 07.35
