@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 //Belajar membuat tampilan home dan text widget
@@ -176,6 +178,7 @@ class _MyAppState extends State<MyApp> {
 }
 */
 
+/*
 //List View
 
 void main() => runApp(MyApp());
@@ -231,3 +234,31 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+*/
+
+//animated container
+void main () => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Random random = Random();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Latihan Animated container"),),
+        body: Center(child: AnimatedContainer(
+          duration: Duration(seconds: 1),
+          width: 50 + random.nextInt(100),
+        ),),
+
+      ),
+      
+    );
+  }
+}
