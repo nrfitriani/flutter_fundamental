@@ -237,7 +237,7 @@ class _MyAppState extends State<MyApp> {
 */
 
 //animated container
-void main () => runApp(MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -251,14 +251,25 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Latihan Animated container"),),
-        body: Center(child: AnimatedContainer(
-          duration: Duration(seconds: 1),
-          width: 50 + random.nextInt(100),
-        ),),
-
+        appBar: AppBar(
+          title: Text("Latihan Animated container"),
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+              });
+            },
+            child: AnimatedContainer(
+              color: Color.fromARGB(220, random.nextInt(225),
+                  random.nextInt(225), random.nextInt(255)),
+              duration: Duration(seconds: 1),
+              width: 50.0 + random.nextInt(100),
+              height: 50.0 + random.nextInt(101),
+            ),
+          ),
+        ),
       ),
-      
     );
   }
 }
