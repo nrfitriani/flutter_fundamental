@@ -1,4 +1,4 @@
-import 'dart:math';
+
 
 import 'package:flutter/material.dart';
 
@@ -237,7 +237,7 @@ class _MyAppState extends State<MyApp> {
 */
 
 //animated container
-void main() => runApp(MyApp());
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -268,6 +268,68 @@ class _MyAppState extends State<MyApp> {
               height: 50.0 + random.nextInt(101),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+*/
+
+//Flexible Layout
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Flexible Layout")),
+        body: Column(
+          children: <Widget>[
+          Flexible(
+            child: Row(children: <Widget>[
+              Flexible(
+                flex: 1,
+                child: Container(
+                  margin: EdgeInsets.all(5),
+                  color: Colors.indigoAccent
+                ),
+              ),
+              Flexible(
+                flex: 2,
+                child: Container(
+                  margin: EdgeInsets.all(5),
+                  color: Colors.lightBlue
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Container(
+                  margin: EdgeInsets.all(5),
+                  color: Colors.lime
+                ),
+              )
+            ],)
+          ),  
+          
+          Flexible(
+            flex: 2,
+            child: Container (
+              margin: EdgeInsets.all(5),
+              color: Colors.blueAccent,
+              ),
+            ),
+          
+          Flexible(
+            flex: 1,
+            child: Container (
+              margin: EdgeInsets.all(5),
+              color: Colors.greenAccent,
+              ),
+            ),
+          
+          ]
         ),
       ),
     );
