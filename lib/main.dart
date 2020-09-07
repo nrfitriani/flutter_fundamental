@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 //Belajar membuat tampilan home dan text widget
@@ -277,7 +275,7 @@ class _MyAppState extends State<MyApp> {
 */
 
 //Flexible Layout
-void main() => runApp(MyApp());
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -330,6 +328,154 @@ class MyApp extends StatelessWidget {
             ),
           
           ]
+        ),
+      ),
+    );
+  }
+}
+*/
+
+//Stack and Align Widget
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Stack an d Align Widget"),
+        ),
+        body: Stack(
+          children: <Widget>[
+            Column(children: <Widget>[
+              Flexible(
+                flex: 1,
+                child: Row(
+                  children: <Widget>[
+                    Flexible(flex: 1, child: Container(color: Colors.blue)),
+                    Flexible(flex: 1, child: Container(color: Colors.white12))
+                  ],
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Row(
+                  children: <Widget>[
+                    Flexible(flex: 1, child: Container(color: Colors.white12)),
+                    Flexible(flex: 1, child: Container(color: Colors.blue))
+                  ],
+                ),
+              ),
+            ]),
+            ListView(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(12),
+                        child: Text(
+                          "Langkah awal suksesmu",
+                          style: TextStyle(fontSize: 23),
+                        )),
+                  ],
+                )
+              ],
+            ),
+            Align(
+              alignment: Alignment(0, 0.75),
+              child: RaisedButton(
+              
+              child: Text("Click me"),
+              color: Colors.blueGrey,
+              onPressed: () {},
+              
+            ))
+          ],
         ),
       ),
     );
