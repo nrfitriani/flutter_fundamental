@@ -473,7 +473,7 @@ class MyApp extends StatelessWidget {
               child: Text("Click me"),
               color: Colors.blueGrey,
               onPressed: () {},
-              
+               
             ))
           ],
         ),
@@ -483,7 +483,8 @@ class MyApp extends StatelessWidget {
 }
 */
 
-void main() => runApp(MyApp());
+//image widget
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -500,6 +501,35 @@ class MyApp extends StatelessWidget {
           )
         ),
       ),
+    );
+  }
+}
+*/
+
+//Spacers Widget
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar : AppBar(title: Text("Spacers widget"),),
+        body: Center(
+          child: Row(
+            children: <Widget> [
+              Spacer(flex: 1),
+              Container( width: 80, height: 80, color: Colors.pink),
+              Spacer(flex: 2),
+              Container( width: 80, height: 80, color: Colors.blue),
+              Spacer(flex: 1),
+              Container( width: 80, height: 80, color: Colors.pink),
+            ]
+          ),
+        )
+
+      ),
+      
     );
   }
 }
