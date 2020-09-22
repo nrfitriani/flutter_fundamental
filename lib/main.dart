@@ -536,6 +536,7 @@ class MyApp extends StatelessWidget {
 */
 
 
+/*
 //Draggable,DragTarget,Sized box, Material
 void main() => runApp(MyApp());
 
@@ -642,3 +643,18 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+*/
+
+//F16_Multipage
+import 'package:flutter_fundamental/login_page.dart';
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: LoginPage(),
+      
+    );
+  }
+}
