@@ -507,7 +507,7 @@ class MyApp extends StatelessWidget {
 */
 
 //Spacers Widget
-void main() => runApp(MyApp());
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -533,3 +533,112 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/
+
+
+//Draggable,DragTarget,Sized box, Material
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color color1 = Colors.redAccent;
+  Color color2 = Colors.teal;
+  bool isAccepted = false;
+  Color targetColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Dragable"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Draggable<Color>( //yg mau di drag
+                    data: color1,
+                    child: SizedBox(
+                      width: 40,
+                      height: 40,
+                      child: Material(
+                          color: color1, shape: StadiumBorder(), elevation: 5),
+                    ),
+                    childWhenDragging: SizedBox( //yg terjadi pada tempat awal widget, saat  widget di drag
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: Colors.black26,
+                          shape: StadiumBorder(),
+                        )),
+                  feedback: SizedBox( //yg terjadi pada widget yg di drag saat dia di drag
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: color1.withOpacity(0.5),
+                          shape: StadiumBorder(),
+                          elevation: 3,
+                        )),
+                  ),
+                  
+                  Draggable<Color>( //yg mau di drag
+                    data: color2,
+                    child: SizedBox(
+                      width: 40,
+                      height: 40,
+                      child: Material(
+                          color: color2, shape: StadiumBorder(), elevation: 5),
+                    ),
+                    childWhenDragging: SizedBox( //yg terjadi pada tempat awal widget, saat  widget di drag
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: Colors.black26,
+                          shape: StadiumBorder(),
+                        )),
+                  feedback: SizedBox( //yg terjadi pada widget yg di drag saat dia di drag
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: color2.withOpacity(0.5),
+                          shape: StadiumBorder(),
+                          elevation: 3,
+                        )),
+                  ),
+                ]),
+          DragTarget<Color> ( //tujuan widget akan dibawa
+            onWillAccept: (value) => true, //jika ada data masuk terima saja
+            onAccept: (value) => (isAccepted = true),// lalu diberitahu klu sdh menerima
+            builder: (context, candidates, rejected){
+            return (isAccepted) ?  SizedBox( //jika diterima, maka lakukan ini // ini adalah boolean true
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: color1,
+                          shape: StadiumBorder(),
+                          elevation: 3,
+                        )): //note untuk boolean true
+              SizedBox(// jika tidak diterima //boolean false
+                        width: 100,
+                        height: 100,
+                        child: Material(
+                          color: Colors.blue,
+                          shape: StadiumBorder(),
+                          elevation: 3,
+                        ));//untuk boolean false
+            },
+          )
+          ],
+        ), 
+      ),
+    );
+  }
+}
+
