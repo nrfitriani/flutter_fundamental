@@ -535,7 +535,6 @@ class MyApp extends StatelessWidget {
 }
 */
 
-
 /*
 //Draggable,DragTarget,Sized box, Material
 void main() => runApp(MyApp());
@@ -660,6 +659,7 @@ class MyApp extends StatelessWidget {
 }
 */
 
+/*
 //f17_appbar example
 void main() => runApp(MyApp());
 
@@ -689,4 +689,36 @@ class MyApp extends StatelessWidget {
     ),
     );
   } 
+}
+*/
+
+//f18_cardWidget
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          color: Colors.green,
+          margin: EdgeInsets.all(10),
+          child: ListView(children: <Widget>[
+            buildCard(Icons.account_box, "Account Box"),
+            buildCard(Icons.adb, "ADB")
+          ]),
+        ),
+      ),
+    );
+  }
+
+  Card buildCard(IconData iconData, String text) {
+    return Card(
+            elevation: 5,
+            child: Row(children: <Widget>[
+              Container(margin: EdgeInsets.all(5), child: Icon(iconData)),
+              Text(text)
+            ]),
+          );
+  }
 }
