@@ -692,6 +692,7 @@ class MyApp extends StatelessWidget {
 }
 */
 
+/*
 //f18_cardWidget
 void main() => runApp(MyApp());
 
@@ -720,5 +721,45 @@ class MyApp extends StatelessWidget {
               Text(text)
             ]),
           );
+  }
+}
+*/
+
+//F19 Textfield
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  TextEditingController controller = TextEditingController(text: "nilai awal");
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Latihan Text Field")),
+        body: Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              TextField(
+                maxLength: 4,
+                maxLines: 1,
+                obscureText: true,//text untuk password
+                controller: controller,
+                onChanged: (value) {
+                  setState(() {});
+                },
+              ),
+              Text(controller.text)
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
