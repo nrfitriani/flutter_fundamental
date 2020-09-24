@@ -716,7 +716,7 @@ class MyApp extends StatelessWidget {
     return Card(
             elevation: 5,
             child: Row(children: <Widget>[
-              Container(margin: EdgeInsets.all(5), child: Icon(iconData)),
+              Container(width: 50, height:70, margin: EdgeInsets.all(5), child: Icon(iconData), color: Colors.green,),
               Text(text)
             ]),
           );
