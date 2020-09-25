@@ -734,7 +734,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController(text: "nilai awal");
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -747,9 +747,17 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
+                decoration: InputDecoration(
+                  fillColor: Colors.lightBlue,
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  icon: Icon (Icons.add_call),
+                  labelText: "Number Phone", 
+                  hintText: "Nomor telfon anda",
+                  hintStyle: TextStyle(fontSize: 12),
+                ),
                 maxLength: 4,
                 maxLines: 1,
-                obscureText: true,//text untuk password
+                //obscureText: true,//text untuk password
                 controller: controller,
                 onChanged: (value) {
                   setState(() {});
